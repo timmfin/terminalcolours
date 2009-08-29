@@ -30,10 +30,22 @@ static NSString* colourKeys[] = {
 {
 	id colour = nil;
 
-	if(index > 0)
+	if(index > 0) {
 		colour = [[self performSelector:@selector(profile)] valueForKey:colourKeys[index]];
+	}
 
 	return colour ?: [self TerminalColours_colorForANSIColor:index];
+}
+
+- (id)TerminalColours_colorForANSIColor:(unsigned int)index adjustedRelativeToColor:(id)arg2;
+{
+	id colour = nil;
+
+	if(index > 0) {
+		colour = [[self performSelector:@selector(profile)] valueForKey:colourKeys[index]];
+	}
+
+	return colour ?: [self TerminalColours_colorForANSIColor:index adjustedRelativeToColor:arg2];
 }
 @end
 
@@ -153,6 +165,7 @@ static NSString* colourKeys[] = {
 	[NSClassFromString(@"TTProfile") jr_swizzleMethod:@selector(setValue:forKey:) withMethod:@selector(TerminalColours_TTProfile_setValue:forKey:) error:NULL];
 
 	[NSClassFromString(@"TTView") jr_swizzleMethod:@selector(colorForANSIColor:) withMethod:@selector(TerminalColours_colorForANSIColor:) error:NULL];
+	[NSClassFromString(@"TTView") jr_swizzleMethod:@selector(colorForANSIColor:adjustedRelativeToColor:) withMethod:@selector(TerminalColours_colorForANSIColor:adjustedRelativeToColor:) error:NULL];
 	[NSClassFromString(@"TTAppPrefsController") jr_swizzleMethod:@selector(windowDidLoad) withMethod:@selector(TerminalColours_TTAppPrefsController_windowDidLoad) error:NULL];
 	[NSClassFromString(@"TTProfile") jr_swizzleMethod:@selector(propertyListRepresentation) withMethod:@selector(TerminalColours_propertyListRepresentation) error:NULL];
 }
