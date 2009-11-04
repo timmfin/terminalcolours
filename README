@@ -1,0 +1,9 @@
+Finally you can have terminalcolors (http://ciaranwal.sh/2007/11/01/customising-colours-in-leopard-terminal) fully working on Snow Leopard.
+
+I merged evanphx's Snow Leopard fixes with silverity's 64bit fixes. With this newer bundle and the "newest SIMBL (http://www.culater.net/software/SIMBL/SIMBL.php) that works on Snow Leopard, you don't need to open the Terminal in 32bit mode any more.
+
+http://github.com/timmfin/terminalcolours/raw/master/TerminalColours-SL-64bit.zip
+
+Follow the same instructions: install the latest SIMBL for Snow Leopard, unzip the file, copy the bundle to the SIMBL plugin folder, and then restart Terminal.app.
+
+ps: I'm a total xcode/objective-c newb, so let me know if I did anything wrong :)
