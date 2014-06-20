@@ -4,6 +4,10 @@ I merged evanphx's Snow Leopard fixes with silverity's 64bit fixes. With this ne
 
 http://github.com/timmfin/terminalcolours/raw/master/TerminalColours-SL-64bit.zip
 
-Follow the same instructions: install the latest SIMBL for Snow Leopard, unzip the file, copy the bundle to the SIMBL plugin folder, and then restart Terminal.app.
+1. If you don't have SIMBL, Install it from here: http://www.culater.net/software/SIMBL/SIMBL.php
+2. copy the bundle (TerminalColours-SL-64bit.bundle) into ~/Library/Application Support/SIMBL/Plugins
+3. restart terminal.app
+4. You'll now see the colors under Terminal>settings>text>more
+
 
 ps: I'm a total xcode/objective-c newb, so let me know if I did anything wrong :)
